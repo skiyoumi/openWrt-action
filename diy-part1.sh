@@ -23,23 +23,23 @@
 #echo 'src-git telephony https://github.com/coolsnowwolf/telephony.git' >>feeds.conf.default
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-cd package
+#cd package
 git clone https://github.com/jerrykuku/luci-theme-argon.git
 
-mkdir luci-app-openclash
-cd luci-app-openclash
-git init
-git remote add -f origin https://github.com/vernesong/OpenClash.git
-git config core.sparsecheckout true
-echo "luci-app-openclash" >> .git/info/sparse-checkout
-git pull --depth 1 origin master
-git branch --set-upstream-to=origin/master master
+#mkdir luci-app-openclash
+#cd luci-app-openclash
+#git init
+#git remote add -f origin https://github.com/vernesong/OpenClash.git
+#git config core.sparsecheckout true
+#echo "luci-app-openclash" >> .git/info/sparse-checkout
+#git pull --depth 1 origin master
+#git branch --set-upstream-to=origin/master master
 
 # 编译 po2lmo (如果有po2lmo可跳过)
-pushd luci-app-openclash/tools/po2lmo
-make && sudo make install
-popd
+#pushd luci-app-openclash/tools/po2lmo
+#make && sudo make install
+#popd
 
-cd luci-app-openclash/luci-app-openclash
-git pull
-cd ../../../
+#cd luci-app-openclash/luci-app-openclash
+#git pull
+#cd ../../../
