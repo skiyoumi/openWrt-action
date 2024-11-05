@@ -12,10 +12,10 @@
 
 # Uncomment a feed source
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
-sed -i 's/^#\(.*packages\)/\1/' feeds.conf.default
-sed -i 's/^#\(.*luci\)/\1/' feeds.conf.default
-sed -i 's/^#\(.*routing\)/\1/' feeds.conf.default
-sed -i 's/^#\(.*telephony\)/\1/' feeds.conf.default
+sed -i 's/^[^#].*packages$/#&/g' feeds.conf.default
+sed -i 's/^[^#].*luci$/#&/g' feeds.conf.default
+sed -i 's/^[^#].*routing$/#&/g' feeds.conf.default
+sed -i 's/^[^#].*telephony$/#&/g' feeds.conf.default
 # Add a feed source
 echo 'src-git packages https://github.com/coolsnowwolf/packages' >>feeds.conf.default
 echo 'src-git luci https://github.com/coolsnowwolf/luci.git;openwrt-23.05' >>feeds.conf.default
